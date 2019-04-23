@@ -1,18 +1,18 @@
 package main.java;
 
-import edu.unh.cs.treccar_v2.Data;
-import main.java.QueryExpansion.QueryExpansion;
-import main.java.QueryExpansion.QueryExpansionLDA;
-import main.java.QueryExpansion.QueryExpansionQueryEntity;
+//import edu.unh.cs.treccar_v2.Data;
+//import main.java.QueryExpansion.QueryExpansion;
+//import main.java.QueryExpansion.QueryExpansionLDA;
+//import main.java.QueryExpansion.QueryExpansionQueryEntity;
 import main.java.ranklib.*;
 import org.apache.lucene.queryparser.classic.ParseException;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.HashMap;
+//import java.lang.reflect.Array;
+//import java.util.ArrayList;
+//import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

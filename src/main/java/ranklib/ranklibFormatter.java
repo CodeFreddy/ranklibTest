@@ -1,10 +1,10 @@
 package main.java.ranklib;
 
-import edu.unh.cs.treccar_v2.Data;
+//import edu.unh.cs.treccar_v2.Data;
 import javafx.util.Pair;
-import jdk.jfr.internal.BufferWriter;
-import jdk.nashorn.internal.parser.TokenStream;
-import main.java.QueryData;
+//import jdk.jfr.internal.BufferWriter;
+//import jdk.nashorn.internal.parser.TokenStream;
+//import main.java.QueryData;
 import main.java.queryRetriever;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
@@ -16,8 +16,8 @@ import org.apache.lucene.store.FSDirectory;
 import java.io.*;
 import java.util.*;
 
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.locks.ReentrantLock;
+//import java.util.concurrent.atomic.AtomicInteger;
+//import java.util.concurrent.locks.ReentrantLock;
 
 class paraContrainer implements Comparator<paraContrainer>{
     public String pid;
