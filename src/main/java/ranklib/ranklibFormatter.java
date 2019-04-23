@@ -134,7 +134,7 @@ public class ranklibFormatter {
         this.indexPath = indexPath;
         this.qRetriever  = new queryRetriever(this.indexPath);
 
-        this.queries = qRetriever.getSectionQueries(queryLocation);
+        this.queries = qRetriever.getSectionQueries(this.queryLocation);
     }
 
     interface Function{
@@ -419,6 +419,7 @@ public class ranklibFormatter {
 
     public void writeToRankLibFile(String output) throws IOException {
         BufferedWriter bufferWriter = new BufferedWriter(new FileWriter(output));
+        System.out.println("Out put path: " + output);
         for(queryContainer qc: qcontainers)
         {
             for(paraContrainer pc: qc.paras)

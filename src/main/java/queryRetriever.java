@@ -3,10 +3,12 @@ package main.java;
 //import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.unh.cs.treccar_v2.Data;
 import edu.unh.cs.treccar_v2.read_data.DeserializeData;
+
 import org.apache.lucene.analysis.*;
 import org.apache.lucene.analysis.en.EnglishAnalyzer;
 //import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
+import org.apache.lucene.analysis.tokenattributes.OffsetAttribute;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.Term;
@@ -14,6 +16,8 @@ import org.apache.lucene.search.*;
 import org.apache.lucene.store.FSDirectory;
 import main.java.Pair;
 import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -41,9 +45,15 @@ public class queryRetriever {
     public List<String> createTokenList(String query) throws IOException {
         TokenStream tokenStream = analyzer.tokenStream("content", new StringReader(query));
         List<String> res = new ArrayList<>();
+        OffsetAttribute offsetAttribute = tokenStream.addAttribute(OffsetAttribute.class);
+        CharTermAttribute charTermAttribute = tokenStream.addAttribute(CharTermAttribute.class);
+
+        tokenStream.reset();
         while(tokenStream.incrementToken())
         {
-            res.add(tokenStream.getAttribute(CharTermAttribute.class).toString());
+            int startOffset = offsetAttribute.startOffset();
+            int endOffset = offsetAttribute.endOffset();
+            res.add(charTermAttribute.toString());
         }
         tokenStream.end();
         tokenStream.close();
@@ -115,12 +125,16 @@ public class queryRetriever {
      * @return List of pairs (query string and the Top 100 documents obtained by doing the query)
      */
 
-    public List<Pair<String, TopDocs>> getSectionQueries(String queryLocation) throws IOException,FileNotFoundException {
+    public List<Pair<String, TopDocs>> getSectionQueries(String queryLocation) throws IOException {
         List<Pair<String, TopDocs>> res = new ArrayList<>();
         Map<String, String> map = new HashMap<>();
         FileInputStream fis = new FileInputStream(new File(queryLocation));
+
+
+
         for(Data.Page page : DeserializeData.iterableAnnotations(fis))
         {
+
             for (List<Data.Section> sectionPath : page.flatSectionPaths())
             {
                 String queryId = Data.sectionPathId(page.getPageId(), sectionPath);
@@ -155,8 +169,9 @@ public class queryRetriever {
             String paraId = doc.getField("paraid").stringValue();
             float rankScore = score.score;
             int rank = i + 1;
-            String runStr = queryId + " Q " + qNumber + " " + paraId + " " + rank + " " + rankScore + " " + "team 3";
+            String runStr = queryId + " Q" + qNumber + " " + paraId + " " + rank + " " + rankScore + " " + "team 3";
             writer.write(runStr);
+            writer.newLine();
         }
 
     }

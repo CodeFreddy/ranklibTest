@@ -22,7 +22,8 @@ public class ranklibTrainer {
         this.indexPath = indexPath;
         this.queryPath = queryPath;
         this.qrelPath = qrelPath;
-        formatter = new ranklibFormatter(queryPath, qrelPath, indexPath);
+
+        formatter = new ranklibFormatter(this.qrelPath, this.queryPath, this.indexPath);
 
     }
 

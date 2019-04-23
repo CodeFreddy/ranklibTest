@@ -17,17 +17,17 @@ import java.util.List;
 import java.util.Map;
 
 public class Main {
-    static private String INDEX_DIRECTORY = "/Users/xin/Documents/19Spring/DS/index";
-    static private String OUTPUT_DIR = "out";
+    static private String INDEX_DIRECTORY = "C:\\CS953\\ranklibTest\\index";
+    static private String OUTPUT_DIR = "C:\\CS953\\ranklibTest\\output";
     static final private int Max_Results = 100;
     static private String queryLocation;
-    static private String qrelLocation;
+    static private String qrelLocation = "C:\\CS953\\ranklibTest\\queries\\benchmarkY1-test.v2.0.tar\\benchmarkY1\\benchmarkY1-test\\test.pages.cbor-article.qrels";
     static IndexData indexer;
 
     public static void main(String[] args) throws Exception,IOException, ParseException {
         System.setProperty("file.encoding", "UTF-8");
 
-        String queryPath = "/Users/xin/Desktop/benchmarkY2.public/benchmarkY2.cbor-outlines.cbor";
+        String queryPath = "C:\\CS953\\ranklibTest\\queries\\benchmarkY1-test.v2.0.tar\\benchmarkY1\\benchmarkY1-test\\test.pages.cbor-outlines.cbor";
 
 
         String dataPath = "/Users/xin/Documents/19Spring/DS/test200/test200-train/train.pages.cbor-paragraphs.cbor";
@@ -45,7 +45,7 @@ public class Main {
 //        indexer = new IndexData(INDEX_DIRECTORY, dataPath);
 //        indexer.reIndex();
 
-        QueryData queryData = new QueryData(queryPath);
+  //      QueryData queryData = new QueryData(queryPath);
 //
 //        Map<String,String> pageMap = queryData.getAllPageQueries();
 //        Map<String,String> sectionMap = queryData.getAllSectionQueries();
@@ -116,13 +116,14 @@ public class Main {
 //
 //        ArrayList<String> freqBigram_Section_run = Bigram_variation.getSearchResult(sectionMap, INDEX_DIRECTORY);
 //        writeFile("Bigram-Variation-Section.run", freqBigram_Section_run);
+        // Ranklib Query
 
-//        // Ranklib Trainer
-//
-//            runRanklibTrainer(INDEX_DIRECTORY, queryPath, qrelLocation, OUTPUT_DIR + method + "_query_results.run", method);
-//        // Ranklib Query
-//
-//            runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR + "ranklib_features.txt", method);
+           runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR + "\\" + method + "_query_results.run", method);
+
+        // Ranklib Trainer
+
+           runRanklibTrainer(INDEX_DIRECTORY, queryPath, qrelLocation, OUTPUT_DIR + "\\" + "ranklib_features.txt", method);
+
 
 
         System.out.println("Finished");
@@ -148,6 +149,7 @@ public class Main {
     }
 
     public static void runRanklibQuery(String indexPath, String queryLocation, String output, String method) throws IOException {
+
         ranklibTrainer trainer = new ranklibTrainer(indexPath, queryLocation, "");
         trainer.runRanklibQuery(method, output);
     }
