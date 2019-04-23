@@ -45,7 +45,7 @@ public class Main {
 //        indexer = new IndexData(INDEX_DIRECTORY, dataPath);
 //        indexer.reIndex();
 
-//        QueryData queryData = new QueryData(queryPath);
+        QueryData queryData = new QueryData(queryPath);
 //
 //        Map<String,String> pageMap = queryData.getAllPageQueries();
 //        Map<String,String> sectionMap = queryData.getAllSectionQueries();
@@ -117,12 +117,12 @@ public class Main {
 //        ArrayList<String> freqBigram_Section_run = Bigram_variation.getSearchResult(sectionMap, INDEX_DIRECTORY);
 //        writeFile("Bigram-Variation-Section.run", freqBigram_Section_run);
 
-        // Ranklib Trainer
-
-            runRanklibTrainer(INDEX_DIRECTORY, queryPath, qrelLocation, OUTPUT_DIR + method + "_query_results.run", method);
-        // Ranklib Query
-
-            runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR + "ranklib_features.txt", method);
+//        // Ranklib Trainer
+//
+//            runRanklibTrainer(INDEX_DIRECTORY, queryPath, qrelLocation, OUTPUT_DIR + method + "_query_results.run", method);
+//        // Ranklib Query
+//
+//            runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR + "ranklib_features.txt", method);
 
 
         System.out.println("Finished");
