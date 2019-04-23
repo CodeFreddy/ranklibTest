@@ -3,7 +3,6 @@ package main.java;
 //import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.unh.cs.treccar_v2.Data;
 import edu.unh.cs.treccar_v2.read_data.DeserializeData;
-import javafx.util.Pair;
 import org.apache.lucene.analysis.*;
 import org.apache.lucene.analysis.en.EnglishAnalyzer;
 //import org.apache.lucene.analysis.standard.StandardAnalyzer;
@@ -13,7 +12,7 @@ import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.Term;
 import org.apache.lucene.search.*;
 import org.apache.lucene.store.FSDirectory;
-
+import main.java.Pair;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;

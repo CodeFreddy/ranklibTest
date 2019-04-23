@@ -1,7 +1,7 @@
 package main.java.ranklib;
 
 //import edu.unh.cs.treccar_v2.Data;
-import javafx.util.Pair;
+import main.java.Pair;
 //import jdk.jfr.internal.BufferWriter;
 //import jdk.nashorn.internal.parser.TokenStream;
 //import main.java.QueryData;
