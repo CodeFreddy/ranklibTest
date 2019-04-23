@@ -39,8 +39,7 @@ public class Main {
         queryPath = args[1];
         //dataPath = args[1];
         OUTPUT_DIR = args[2];
-        queryLocation = args[3];
-        qrelLocation = args[4];
+        qrelLocation = args[3];
 
 
 //        indexer = new IndexData(INDEX_DIRECTORY, dataPath);
@@ -120,10 +119,10 @@ public class Main {
 
         // Ranklib Trainer
 
-            runRanklibTrainer(INDEX_DIRECTORY, queryLocation, qrelLocation, OUTPUT_DIR + method + "_query_results.run", method);
+            runRanklibTrainer(INDEX_DIRECTORY, queryPath, qrelLocation, OUTPUT_DIR + method + "_query_results.run", method);
         // Ranklib Query
 
-            runRanklibQuery(INDEX_DIRECTORY, queryLocation, OUTPUT_DIR + "ranklib_features.txt", method);
+            runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR + "ranklib_features.txt", method);
 
 
         System.out.println("Finished");

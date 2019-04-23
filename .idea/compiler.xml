@@ -6,12 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Assignment1" />
-        <module name="CS953" />
-        <module name="DataScienceAssignment1" />
-        <module name="DataScienceSubmission1" />
-        <module name="submission1" />
+        <module name="ranklibTest" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ranklibTest" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
