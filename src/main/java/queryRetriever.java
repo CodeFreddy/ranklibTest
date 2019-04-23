@@ -115,7 +115,7 @@ public class queryRetriever {
      * @return List of pairs (query string and the Top 100 documents obtained by doing the query)
      */
 
-    public List<Pair<String, TopDocs>> getSectionQueries(String queryLocation) throws IOException {
+    public List<Pair<String, TopDocs>> getSectionQueries(String queryLocation) throws IOException,FileNotFoundException {
         List<Pair<String, TopDocs>> res = new ArrayList<>();
         Map<String, String> map = new HashMap<>();
         FileInputStream fis = new FileInputStream(new File(queryLocation));
