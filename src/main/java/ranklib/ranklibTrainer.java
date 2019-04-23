@@ -18,12 +18,12 @@ public class ranklibTrainer {
     private String queryPath;
     private String qrelPath;
     private ranklibFormatter formatter;
-    public ranklibTrainer(String indexPath, String queryPath, String qrelPath) throws IOException {
+    public ranklibTrainer(String indexPath, String queryPath, String qrelPath, String flag) throws IOException {
         this.indexPath = indexPath;
         this.queryPath = queryPath;
         this.qrelPath = qrelPath;
 
-        formatter = new ranklibFormatter(this.qrelPath, this.queryPath, this.indexPath);
+        formatter = new ranklibFormatter(this.qrelPath, this.queryPath, this.indexPath, flag);
 
     }
 

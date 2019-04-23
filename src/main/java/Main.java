@@ -18,7 +18,7 @@ import java.util.Map;
 
 public class Main {
     static private String INDEX_DIRECTORY = "C:\\CS953\\ranklibTest\\index";
-    static private String OUTPUT_DIR = "C:\\CS953\\ranklibTest\\output";
+    static private String OUTPUT_DIR = "C:\\CS953\\ranklibTest\\output\\";
     static final private int Max_Results = 100;
     static private String queryLocation;
     static private String qrelLocation = "C:\\CS953\\ranklibTest\\queries\\benchmarkY1-test.v2.0.tar\\benchmarkY1\\benchmarkY1-test\\test.pages.cbor-article.qrels";
@@ -118,11 +118,12 @@ public class Main {
 //        writeFile("Bigram-Variation-Section.run", freqBigram_Section_run);
         // Ranklib Query
 
-           runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + method + "_query_results.run", method);
+           runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + method + "_query_results.run", method, "pages");
+           runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + method + "_query_results.run", method, "sections");
 
         // Ranklib Trainer
 
-           runRanklibTrainer(INDEX_DIRECTORY, queryPath, qrelLocation, OUTPUT_DIR  + "ranklib_features.txt", method);
+        //   runRanklibTrainer(INDEX_DIRECTORY, queryPath, qrelLocation, OUTPUT_DIR  + "ranklib_features.txt", method);
 
 
 
@@ -143,14 +144,14 @@ public class Main {
         }
     }
 
-    public static void runRanklibTrainer(String indexPath, String queryLocation, String qrelLocation, String output, String method) throws IOException {
-        ranklibTrainer trainer = new ranklibTrainer(indexPath, queryLocation, qrelLocation);
+    public static void runRanklibTrainer(String indexPath, String queryLocation, String qrelLocation, String output, String method, String flag) throws IOException {
+        ranklibTrainer trainer = new ranklibTrainer(indexPath, queryLocation, qrelLocation, flag);
         trainer.train(method, output);
     }
 
-    public static void runRanklibQuery(String indexPath, String queryLocation, String output, String method) throws IOException {
+    public static void runRanklibQuery(String indexPath, String queryLocation, String output, String method, String flag) throws IOException {
 
-        ranklibTrainer trainer = new ranklibTrainer(indexPath, queryLocation, "");
+        ranklibTrainer trainer = new ranklibTrainer(indexPath, queryLocation, "", flag);
         trainer.runRanklibQuery(method, output);
     }
 

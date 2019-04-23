@@ -122,7 +122,7 @@ public class ranklibFormatter {
     public queryRetriever qRetriever;
     public List<Pair<String, TopDocs>> queries;
 
-    ranklibFormatter(String qrelLoc, String queryLocation,String indexPath) throws IOException {
+    ranklibFormatter(String qrelLoc, String queryLocation,String indexPath, String flag) throws IOException {
         this.qrelLoc = qrelLoc;
         try {
             this.indexSearcher = new IndexSearcher(DirectoryReader.open(FSDirectory.open((new File(indexPath).toPath()))));
@@ -134,7 +134,15 @@ public class ranklibFormatter {
         this.indexPath = indexPath;
         this.qRetriever  = new queryRetriever(this.indexPath);
 
-        this.queries = qRetriever.getSectionQueries(this.queryLocation);
+        if(flag.equals("pages"))
+        {
+            this.queries = qRetriever.getSectionQueries(this.queryLocation);
+        }else if(flag.equals("sections"))
+        {
+            this.queries = qRetriever.getPageQueries(this.queryLocation);
+        }
+        //
+
     }
 
     interface Function{
@@ -326,6 +334,8 @@ public class ranklibFormatter {
         for(int i = 0; i < qcontainers.size(); i++)
         {
             String query = qcontainers.get(i).getQuery();
+            System.out.println("Here we go");
+            System.out.println(query);
             TopDocs tps = qcontainers.get(i).getTops();
             List<paraContrainer> paras = qcontainers.get(i).getParas();
             /*

@@ -144,6 +144,7 @@ public class queryRetriever {
                 if(map.put(queryId, "") == null)
                 {
                     newPair = new Pair<>(queryId, tops);
+                    System.out.println("Query ID: " + queryId);
                 }
                 if(newPair != null)
                 {
@@ -187,6 +188,7 @@ public class queryRetriever {
         for(int i = 0; i < queries.size(); i++)
         {
             Pair<String, TopDocs> cur = queries.get(i);
+            //System.out.println(cur.getKey());
             writeRankingFile(cur.getValue(), cur.getKey(), writer, i);
         }
         writer.flush();
