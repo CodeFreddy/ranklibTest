@@ -118,8 +118,8 @@ public class Main {
 //        writeFile("Bigram-Variation-Section.run", freqBigram_Section_run);
         // Ranklib Query
 
-           runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + method + "_query_results.run", method, "pages");
-           runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + method + "_query_results.run", method, "sections");
+           runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + method + "pages_query_results.run", method, "pages");
+           runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + method + "sections_query_results.run", method, "sections");
 
         // Ranklib Trainer
 
