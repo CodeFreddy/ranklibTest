@@ -37,11 +37,11 @@ public class Main {
         String avg_query = "average_query";
         String split_section = "split_sections";
         String combined = "combined";
-        INDEX_DIRECTORY = args[0];
-        queryPath = args[1];
-        //dataPath = args[1];
-        OUTPUT_DIR = args[2];
-        qrelLocation = args[3];
+//        INDEX_DIRECTORY = args[0];
+//        queryPath = args[1];
+//        //dataPath = args[1];
+//        OUTPUT_DIR = args[2];
+//        qrelLocation = args[3];
 
 
 //        indexer = new IndexData(INDEX_DIRECTORY, dataPath);
@@ -133,16 +133,16 @@ public class Main {
 //        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + avg_query + "_sections_query_results.run", avg_query, "sections");
 
         // split sections
-        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + split_section + "_pages_query_results.run", split_section, "pages");
-        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + split_section + "_sections_query_results.run", split_section, "sections");
+//        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + split_section + "_pages_query_results.run", split_section, "pages");
+//        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + split_section + "_sections_query_results.run", split_section, "sections");
 
         // combined
-        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + combined + "_pages_query_results.run", combined, "pages");
-        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + combined + "_sections_query_results.run", combined, "sections");
+//        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + combined + "_pages_query_results.run", combined, "pages");
+//        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + combined + "_sections_query_results.run", combined, "sections");
 
         // Ranklib Trainer
 
-        //   runRanklibTrainer(INDEX_DIRECTORY, queryPath, qrelLocation, OUTPUT_DIR  + "ranklib_features.txt", method);
+           runRanklibTrainer(INDEX_DIRECTORY, queryPath, qrelLocation, OUTPUT_DIR  + lm_mercer +"_ranklib_features.txt", lm_mercer, "pages");
 
 
 
