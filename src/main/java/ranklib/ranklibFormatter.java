@@ -136,10 +136,10 @@ public class ranklibFormatter {
 
         if(flag.equals("pages"))
         {
-            this.queries = qRetriever.getSectionQueries(this.queryLocation);
+            this.queries = qRetriever.getPageQueries(this.queryLocation);
         }else if(flag.equals("sections"))
         {
-            this.queries = qRetriever.getPageQueries(this.queryLocation);
+            this.queries = qRetriever.getSectionQueries(this.queryLocation);
         }
         //
 
