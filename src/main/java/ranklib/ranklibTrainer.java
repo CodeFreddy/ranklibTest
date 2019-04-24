@@ -238,6 +238,7 @@ public class ranklibTrainer {
     public void querySplit() throws IOException {
         formatter.addBM25(0.4824247, ranklibFormatter.normType.ZSCORE);
         formatter.addFeatures((query, tops, indexSearcher) -> sectionSplit(query, tops, indexSearcher, 0), 0.069, ranklibFormatter.normType.ZSCORE);
+        System.out.println("Split!!!");
         formatter.addFeatures((query, tops, indexSearcher) -> sectionSplit(query, tops, indexSearcher, 1), -0.1845, ranklibFormatter.normType.ZSCORE);
         formatter.addFeatures((query, tops, indexSearcher) -> sectionSplit(query, tops, indexSearcher, 2), -0.25063, ranklibFormatter.normType.ZSCORE);
         formatter.addFeatures((query, tops, indexSearcher) -> sectionSplit(query, tops, indexSearcher, 3),  0.0134, ranklibFormatter.normType.ZSCORE);
@@ -251,6 +252,7 @@ public class ranklibTrainer {
      */
 
     public void queryDirichlet() throws IOException {
+        System.out.println("Dirichlet");
         formatter.addBM25( 0.80067, ranklibFormatter.normType.ZSCORE);
         formatter.addFeatures((query, tops, indexSeacher) -> useLucSim(query, tops, indexSeacher, new LMDirichletSimilarity()), 0.19932975, ranklibFormatter.normType.ZSCORE);
 

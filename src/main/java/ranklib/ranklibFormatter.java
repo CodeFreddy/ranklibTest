@@ -141,6 +141,8 @@ public class ranklibFormatter {
         {
             this.queries = qRetriever.getSectionQueries(this.queryLocation);
         }
+
+        ranklibFormat(qrelLoc, this.queryLocation);
         //
 
     }
@@ -157,15 +159,18 @@ public class ranklibFormatter {
 
         // If a qrel filepath was given, reads file and creates a set of query/paragraph pairs for relevancies
         List<Pair<String, String>> relevances = new ArrayList<>();
-        BufferedReader bf = new BufferedReader(new FileReader(qrelLoc));
-        String line = bf.readLine();
-        while(line != null)
-        {
-            String[] strs = line.split(" ");
-            Pair<String, String> newPair = new Pair<>(strs[0], strs[2]);
-            relevances.add(newPair);
-        }
+       if(qrelLoc != "")
+       {
+           BufferedReader bf = new BufferedReader(new FileReader(qrelLoc));
+           String line = bf.readLine();
+           while(line != null)
+           {
+               String[] strs = line.split(" ");
+               Pair<String, String> newPair = new Pair<>(strs[0], strs[2]);
+               relevances.add(newPair);
+           }
 
+       }
         // Maps queries into query containers (stores paragraph and feature information)
 
         for(int i = 0; i < queries.size(); i++)
@@ -331,11 +336,12 @@ public class ranklibFormatter {
      */
 
     public void addFeatures(Function f, double weight, normType ntype) throws IOException {
+//        System.out.println("addfeatures");
+//        System.out.println(qcontainers.size());
         for(int i = 0; i < qcontainers.size(); i++)
         {
             String query = qcontainers.get(i).getQuery();
-            System.out.println("Here we go");
-            System.out.println(query);
+            //System.out.println("Here we go");
             TopDocs tps = qcontainers.get(i).getTops();
             List<paraContrainer> paras = qcontainers.get(i).getParas();
             /*
