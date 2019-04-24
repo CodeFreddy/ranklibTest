@@ -373,6 +373,16 @@ public class ranklibFormatter {
         }
     }
 
+    // Convenience function (turns NaN and infinite values into 0.0)
+    public double transDouble(double d)
+    {
+        if(Double.isInfinite(d) || Double.isNaN(d))
+        {
+            d = 0.0;
+        }
+        return d;
+    }
+
     /**
      * Function: addBM25
      * Description: Adds results of the BM25 query as a feature. Since the scores are already contained in the TopDocs,
@@ -411,7 +421,10 @@ public class ranklibFormatter {
             {
                 double total = 0.0;
                 for(int i = 0; i < pc.features.size(); i++)
-                    total += pc.features.get(i);
+                {
+                    double curNum = pc.features.get(i);
+                    total += transDouble(curNum);
+                }
                 pc.score = total;
                 sortedParaContainer.add(pc);
             }

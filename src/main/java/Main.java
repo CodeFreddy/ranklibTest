@@ -120,25 +120,25 @@ public class Main {
 //        writeFile("Bigram-Variation-Section.run", freqBigram_Section_run);
         // Ranklib Query
             // lm-mercer
-           runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + lm_mercer + "_pages_query_results.run", lm_mercer, "pages");
-           runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + lm_mercer + "_sections_query_results.run", lm_mercer, "sections");
+//           runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + lm_mercer + "_pages_query_results.run", lm_mercer, "pages");
+//           runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + lm_mercer + "_sections_query_results.run", lm_mercer, "sections");
 
            // lm_dirichlet
 //
-        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + lm_dirichlet + "_pages_query_results.run", lm_dirichlet, "pages");
-        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + lm_dirichlet + "_sections_query_results.run", lm_dirichlet, "sections");
+//        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + lm_dirichlet + "_pages_query_results.run", lm_dirichlet, "pages");
+//        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + lm_dirichlet + "_sections_query_results.run", lm_dirichlet, "sections");
 
         // average_query
-        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + avg_query + "_pages_query_results.run", avg_query, "pages");
-        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + avg_query + "_sections_query_results.run", avg_query, "sections");
+//        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + avg_query + "_pages_query_results.run", avg_query, "pages");
+//        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + avg_query + "_sections_query_results.run", avg_query, "sections");
 
         // split sections
-//        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + split_section + "_pages_query_results.run", split_section, "pages");
-//        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + split_section + "_sections_query_results.run", split_section, "sections");
+        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + split_section + "_pages_query_results.run", split_section, "pages");
+        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + split_section + "_sections_query_results.run", split_section, "sections");
 
         // combined
-//        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + combined + "_pages_query_results.run", combined, "pages");
-//        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + combined + "_sections_query_results.run", combined, "sections");
+        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + combined + "_pages_query_results.run", combined, "pages");
+        runRanklibQuery(INDEX_DIRECTORY, queryPath, OUTPUT_DIR  + combined + "_sections_query_results.run", combined, "sections");
 
         // Ranklib Trainer
 
