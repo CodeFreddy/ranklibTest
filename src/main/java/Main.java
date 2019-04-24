@@ -37,11 +37,11 @@ public class Main {
         String avg_query = "average_query";
         String split_section = "split_sections";
         String combined = "combined";
-//        INDEX_DIRECTORY = args[0];
-//        queryPath = args[1];
-//        //dataPath = args[1];
-//        OUTPUT_DIR = args[2];
-//        qrelLocation = args[3];
+        INDEX_DIRECTORY = args[0];
+        queryPath = args[1];
+        //dataPath = args[1];
+        OUTPUT_DIR = args[2];
+        qrelLocation = args[3];
 
 
 //        indexer = new IndexData(INDEX_DIRECTORY, dataPath);
