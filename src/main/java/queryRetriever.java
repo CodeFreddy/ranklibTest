@@ -144,7 +144,7 @@ public class queryRetriever {
                 if(map.put(queryId, "") == null)
                 {
                     newPair = new Pair<>(queryId, tops);
-                    System.out.println("Query ID: " + queryId);
+                    //System.out.println("Query ID: " + queryId);
                 }
                 if(newPair != null)
                 {
