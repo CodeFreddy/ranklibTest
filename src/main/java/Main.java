@@ -142,8 +142,16 @@ public class Main {
 
         // Ranklib Trainer
 
-           runRanklibTrainer(INDEX_DIRECTORY, queryPath, qrelLocation, OUTPUT_DIR  + lm_mercer +"_ranklib_features.txt", lm_mercer, "pages");
-
+        runRanklibTrainer(INDEX_DIRECTORY, queryPath, qrelLocation, OUTPUT_DIR  + lm_mercer +"_ranklib_features.txt", lm_mercer, "pages");
+        runRanklibTrainer(INDEX_DIRECTORY, queryPath, qrelLocation, OUTPUT_DIR  + lm_dirichlet +"_ranklib_features.txt", lm_dirichlet, "pages");
+        runRanklibTrainer(INDEX_DIRECTORY, queryPath, qrelLocation, OUTPUT_DIR  + avg_query +"_ranklib_features.txt", avg_query, "pages");
+        runRanklibTrainer(INDEX_DIRECTORY, queryPath, qrelLocation, OUTPUT_DIR  + split_section +"_ranklib_features.txt", split_section, "pages");
+        runRanklibTrainer(INDEX_DIRECTORY, queryPath, qrelLocation, OUTPUT_DIR  + combined +"_ranklib_features.txt", combined, "pages");
+//        runRanklibTrainer(INDEX_DIRECTORY, queryPath, qrelLocation, OUTPUT_DIR  + lm_mercer +"_ranklib_features.txt", lm_mercer, "sections");
+//        runRanklibTrainer(INDEX_DIRECTORY, queryPath, qrelLocation, OUTPUT_DIR  + lm_dirichlet +"_ranklib_features.txt", lm_dirichlet, "sections");
+//        runRanklibTrainer(INDEX_DIRECTORY, queryPath, qrelLocation, OUTPUT_DIR  + avg_query +"_ranklib_features.txt", avg_query, "sections");
+//        runRanklibTrainer(INDEX_DIRECTORY, queryPath, qrelLocation, OUTPUT_DIR  + split_section +"_ranklib_features.txt", split_section, "sections");
+//        runRanklibTrainer(INDEX_DIRECTORY, queryPath, qrelLocation, OUTPUT_DIR  + combined +"_ranklib_features.txt", combined, "sections");
 
 
         System.out.println("Finished");

@@ -168,6 +168,7 @@ public class ranklibFormatter {
                String[] strs = line.split(" ");
                Pair<String, String> newPair = new Pair<>(strs[0], strs[2]);
                relevances.add(newPair);
+               line = bf.readLine();
            }
 
        }
